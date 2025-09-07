@@ -1,2 +1,3 @@
 # py_skeleton
-The skeleton for constructing python apps.
+
+A Python project skeleton with some useful files along with some libraries to get you started.
