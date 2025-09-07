@@ -1,14 +1,18 @@
 from pyutils_lib.services.StatTimer import StatTimer
 from pyutils_lib.services.config_manager import ConfigManager
 
+ConfigManager().define_setting("setting_name",False,'xyz',"string","This is a normal non-secret setting") 
+ConfigManager().define_setting("secret_setting_name",True,None,"string","This is a secret setting") 
 
-#ConfigManager().define_setting(key,is_secret,value,datatype,Description)
+ConfigManager().load_configuration()
 
+
+logs = ConfigManager().get_logger()
 
 this_timer = StatTimer()
 
-ConfigManager.load_configuration()
-
+logs.info("Starting Example")
 print("Hello World")
 
-print(f"Total Time: {this_timer.Duration()}")
+
+logs.info(f"Example Processed In: {this_timer.Duration()}")
